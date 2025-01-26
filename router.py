@@ -3,6 +3,19 @@ from fastapi import APIRouter, Depends
 from repository import ProductRepository
 from schemas import Product, ProductId, ProductAdd
 
+from fastapi.templating import Jinja2Templates
+from fastapi.requests import Request
+from fastapi.responses import HTMLResponse
+
+router_front = APIRouter(prefix='', tags=['Фронтенд'])
+templates = Jinja2Templates(directory='templates')
+
+@router_front.get("/", response_class=HTMLResponse)
+async def read_root(request: Request):
+    return templates.TemplateResponse("pages/index.html",
+                                      {"request": request})
+
+
 router = APIRouter(
     prefix="/products",
     tags=["Продукты"],

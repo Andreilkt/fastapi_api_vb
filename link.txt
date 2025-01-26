@@ -1,0 +1,10 @@
+
+
+/home/andrei/Загрузки/FastApiBlog-main.zip
+https://habr.com/ru/companies/selectel/articles/796669/
+
+
+бот
+https://github.com/Yakvenalex/Aiogram3AlchemySample
+
+docker build . --tag fastapi_app && docker run -p 83:83 fastapi_app
