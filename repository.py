@@ -21,5 +21,5 @@ class ProductRepository:
             query = select(Product_vb)
             result = await session.execute(query)
             product_models = result.scalars().all()
-            product = [Product.model_validate(task_model) for task_model in product_models]
+            product = [Product.model_validate(product_model) for product_model in product_models]
             return product

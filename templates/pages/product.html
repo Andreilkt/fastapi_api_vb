@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Страница продукта{% endblock %}
+
+{% block content %}
+<h2>Продукт</h2>
+
+{% for product in product_front %}
+<b> {{ product.product_name }} </b>
+
+<b> {{ product.article }} </b>
+<b> {{ product.price }} </b>
+<b> {{ product.product_rating }} </b>
+<b> {{ product.total_quantity }} </b>
+{% endfor %}
+
+{% endblock %}
+
+
+
+
